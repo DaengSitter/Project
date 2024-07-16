@@ -30,7 +30,7 @@ import vo.UserVO;
 
 @Controller
 public class AdminController {
-
+//깃허브 테스트
 	@Autowired
 	HttpSession session;
 
