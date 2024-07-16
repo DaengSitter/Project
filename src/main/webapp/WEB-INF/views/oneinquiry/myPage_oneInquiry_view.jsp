@@ -6,15 +6,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
-		<style>
-			.table_main{border-collapse:collapse;
-				  		width: 700px;
-				  		height: 500px;}
-				  		
-		 	.table_reply{border-collapse:collapse;
-				  		width: 700px;
-				  		height: 200px;}
-		</style>
+		
+		<!-- 폰트 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&display=swap" rel="stylesheet">
+		
+		<!-- 폰트2 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		
+		<!-- CSS 파일 링크 -->
+    	<link rel="stylesheet" href="/project/resources/css/oneinquiry/mypage_oneinquiry_view.css">
+		
 		
 		<jsp:include page="/WEB-INF/views/include/login_session.jsp"/>
     	
@@ -42,8 +47,18 @@
 	</head>
 	
 	<body>
-		<div>1:1문의 상세보기</div>
-		<table class="table_main" border="1" align="center">
+	
+		<!-- 헤더  -->
+		<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+	
+	<main>
+		<div>
+		<h2>1:1문의 상세보기</h2>
+		</div>
+		
+		<div id="oneinquiry_view_main">
+		
+		<table class="table_main">
 			<tr>
 				<td>제목</td>
 				<td>${vo.oneinquiry_title }</td>
@@ -65,7 +80,9 @@
 				<c:if test="${vo.oneinquiry_filename ne 'no_file'}">
 				<c:choose>
 					<c:when test="${vo.oneinquiry_filetype.startsWith('image/')}">
+						<div class="photo">
 						<img src="${pageContext.request.contextPath}/resources/upload/${vo.oneinquiry_filename}" width="700">
+						</div>
 					</c:when>
 					<c:otherwise> <!-- 그림 이외의 파일 다운로드 링크 띄우기 -->
 						<a href="${pageContext.request.contextPath}/resources/upload/${vo.oneinquiry_filename}" download>download: ${vo.oneinquiry_filename }</a>
@@ -74,14 +91,22 @@
 				</c:if>
 				</td>
 			</tr>
-		</table>	
+			
+		</table>
 		
-		<hr width="700">
+		<br><br>
 		
-		<div id="comment_disp"></div>
-		
+		<hr>
 		<br>
 		
-		<input type="button" value="목록보기" onclick="location.href='oneInquiryList.do?user_idx=${sessionScope.user.user_idx}'">
+		</div>
+		<div id="comment_disp"></div>
+		
+				<div class="list_view_btn">	
+				<input type="button" value="목록보기" onclick="location.href='oneInquiryList.do?user_idx=${sessionScope.user.user_idx}'">
+				</div>
+		
+		
+		</main>
 	</body>
 </html>

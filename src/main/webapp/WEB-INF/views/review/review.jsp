@@ -80,7 +80,7 @@
         }
     </script>
 
-	<script>
+<script>
     function del(f){
             
             let idx = document.getElementById('user_idx').value;
@@ -102,7 +102,7 @@
                   
             }
          }
-     </script>
+         </script>
 
 </head>
 

@@ -29,9 +29,7 @@
 		<jsp:include page="/WEB-INF/views/include/header.jsp" /> <!-- 헤더 -->
 		<jsp:include page="/WEB-INF/views/include/mypage_menu.jsp"/> <!-- 마이페이지 메뉴-->
 		
-		<style>
-			table{border-collapse:collapse;}	
-		</style>
+
 		
 		<script src="https://cdn.iamport.kr/v1/iamport.js"></script>
 		<script src="/project/resources/js/payment.js"></script>

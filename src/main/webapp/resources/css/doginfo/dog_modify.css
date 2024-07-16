@@ -1,10 +1,16 @@
 @charset "UTF-8";
-
-	form{
+	
+	main{
 		display: flex;
 		align-items: center;
 		justify-content: center;
 		flex-direction: column;
+	}
+	
+	
+	
+	#dog_form_containa{
+
 		padding-bottom: 5%;
 	}
 	
@@ -31,6 +37,7 @@
 	#dogsize_containa, #dogname_containa,
 	#dogage_comtaina, #dogcare_containa,
 	#dogphoto_containa{
+		width:700px;
 		box-shadow: 0 0 5px #C4DEFF;
 		border-radius:10px;
 		padding: 10px;
@@ -54,15 +61,29 @@
 		font-family: Nanum Gothic;
 		font-weight:bold;
 		font-size:20px;
-		width:200px;
+		width:150px;
 		padding: 10px;
 		border-radius:5px;
 		border: none;
 		background-color: #C4DEFF;
 	}
 	
+	select{
+		padding: 5px;
+		border: 1px solid #C4DEFF;
+		border-radius: 5px;
+		width: 100px;
+		font-family: Nanum Gothic;
+		font-weight: bold;
+	}
+	
+	.send_btn{
+		padding-left: 20px;
+	}
+	
 	input[type="button"]:hover{
 		background-color: #79ABFF;
+		
 	}
 	
 	

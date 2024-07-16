@@ -260,13 +260,13 @@ public class LoginController {
 	}
 	
 	//07/15 로그아웃
-	@RequestMapping("/logout.do")
-	public String Logout() {
+	   @RequestMapping("/logout.do")
+	   public String Logout() {
 	      
-	   if (session != null) {
-	         session.invalidate();
-	     }
-	   return "redirect:/loginBeforeMain.do";
-	}
+	      if (session != null) {
+	            session.invalidate();
+	        }
+	      return "redirect:/loginBeforeMain.do";
+	   }
 
 }

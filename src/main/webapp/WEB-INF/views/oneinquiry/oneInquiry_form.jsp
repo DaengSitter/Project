@@ -30,6 +30,7 @@
 		<script src="/project/resources/js/httpRequest.js"></script> 
 		<script>
 			function oneInqSubmit(f){
+			    console.log("ontinqsub함수");
 			    let title = f.oneinquiry_title.value;
 			    let category = f.oneinquiry_category.value;
 	
@@ -92,15 +93,15 @@
 		<div id="oneinquiry_form">
 		
 		<div class="oneinquiry_top">
-		<p>1:1 문의는 마이페이지에서 확인 가능합니다</p>
-	 	<div>제목 <input name="oneinquiry_title" placeholder="제목을 입력하세요"></div>
-	 	<br>
+		<p>* 1:1 문의는 마이페이지에서 확인 가능합니다</p>
+	 	<div class="title">제목 : <input type="text" name="oneinquiry_title" placeholder="제목을 입력하세요"></div>
+	 	<br><hr><br>
 	 	<div>
 	 	<p>카테고리</p>
-	 	<input type="radio" name="oneinquiry_category" value="돌봄">돌봄
-	 	<input type="radio" name="oneinquiry_category" value="산책(실외배변)">산책(+실외배변)
-	 	<input type="radio" name="oneinquiry_category" value="픽업">픽업
-	 	<input type="radio" name="oneinquiry_category" value="기타">기타
+	 	<input type="radio" name="oneinquiry_category" value="oneinquiry_care">돌봄
+	 	<input type="radio" name="oneinquiry_category" value="oneinquiry_walk">산책(+실외배변)
+	 	<input type="radio" name="oneinquiry_category" value="oneinquiry_pickup">픽업
+	 	<input type="radio" name="oneinquiry_category" value="oneinquiry_etc">기타
 	 	</div>
 
 	 	</div>
@@ -115,8 +116,10 @@
 	 	<input type="file" name="oneinquiry_file">
 	 	</div>
 	 	
+	 	<div class="send_btn">
 	 	<input type="button" value="등록" onclick="oneInqSubmit(this.form)">
-	 
+	 	</div>
+	 	
 	 </div>
 	 </form>
 	 

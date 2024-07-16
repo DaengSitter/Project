@@ -4,9 +4,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="notice">
 	
-	 <select id="notice_list" resultType="vo.NoticeVO">
-	 select * from notice
-	 </select>
+	 <select id="notice_list" resultType="vo.NoticeVO" parameterType="java.util.Map">
+        SELECT * FROM (
+            SELECT rank() over (order by notice_regdate DESC) as no, o.*
+            FROM notice o
+        )
+        WHERE no BETWEEN #{start} AND #{end}
+    </select>
 	 
 	
 	<insert id="notice_insert" parameterType="vo.NoticeVO">
@@ -36,6 +40,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		where notice_idx = #{notice_idx}
 		
 	 </update>
+	 
+	 <select id="notice_count" resultType="int"
+           parameterType="java.util.Map">
+           
+      select count(*) from notice
+      
+      
+   </select>
     
     
     <!-- <select id="gong_count" resultType="int"

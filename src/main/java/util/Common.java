@@ -43,6 +43,9 @@ public class Common {
 
 	public static class Gong {
 		public static final String VIEW_PATH_GONG = "/WEB-INF/views/notice/";
+		
+		public static final int BLOCKLIST = 5;
+		public static final int BLOCKPAGE = 5;
 	}
 	
 	public static class Review {

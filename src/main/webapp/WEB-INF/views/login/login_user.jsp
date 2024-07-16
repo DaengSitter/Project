@@ -76,7 +76,6 @@
 	     </div>
 	     
 	      	<div id="login">
-	      	<input type="button" value="어드민" onclick="location.href='login_admin.do'">
 	              <h2>로그인</h2>
 	              <div class="form-group">
 	                  <label for="user_id">아이디</label>

@@ -8,21 +8,37 @@
 		<title>Insert title here</title>
 		
 		<style>
-			table {border-collapse: collapse;}
+			table{
+				border-radius: 10px;
+				width: 900px;
+		
+			}
+			
+			td, th {
+				padding: 10px;
+				border:1px solid #C4DEFF;
+				text-align: center;
+				font-family: Nanum Gothic;
+				font-weight: bold;
+				border-radius: 5px;
+				
+			}
 		</style>
+		
+
 	</head>
 	
 	<body>
 	<c:forEach var="vo" items="${list }">
-		<table border="1" align="center" width="700">
+		<table style="text-align: left;">
 		<c:if test="${vo.onecomment_delete eq 0 }">
-			<tr>
 				<input type="hidden" name="onecomment_idx" value="${vo.onecomment_idx }">
 				<input type="hidden" name="onecomment_oneinquiry_idx" value="${vo.onecomment_oneinquiry_idx }">
+			<tr>
 				<td>작성자</td>
 				<td>${vo.onecomment_admin_name }</td>
 				
-				<td><input type="button" value="삭제" onclick="oneCommDel('${vo.onecomment_idx}', '${vo.onecomment_oneinquiry_idx }');"><td>
+				<td><input type="button" value="삭제" onclick="oneCommDel('${vo.onecomment_idx}', '${vo.onecomment_oneinquiry_idx }');"></td>
 			</tr>
 			<tr>
 				<td>작성일</td>

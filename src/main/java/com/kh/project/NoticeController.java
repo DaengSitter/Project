@@ -43,10 +43,36 @@ public class NoticeController {
 
 	//게시글
 	@RequestMapping("/gongList.do")
-	public String list(Model model) {
+	public String list(Model model,String page){
 		
-		List<NoticeVO> list = notice_dao.selectList();
+		int nowPage = 1;
+		
+		if (page != null && !page.isEmpty()) {
+			nowPage = Integer.parseInt(page);
+		}
+		int start = (nowPage - 1) * Common.Gong.BLOCKLIST + 1;
+		int end = start + Common.Gong.BLOCKLIST - 1;
+		
+		
+
+		
+
+		Map<String, Object> map = new HashMap<String, Object>();
+		map.put("start", start);
+		map.put("end", end);
+		
+		
+		
+		int row_total = notice_dao.getRowTotal(map);
+		
+		String pageMenu = util.NoticePaging.NoticegetPaging("gongList.do", nowPage, row_total,
+				Common.Gong.BLOCKLIST, Common.Gong.BLOCKPAGE);
+		
+		List<NoticeVO> list = notice_dao.selectList(map);
 		model.addAttribute("list", list);
+		model.addAttribute("pageMenu",pageMenu);
+		
+		System.out.println("pagemenu :"+ pageMenu);
 		return Common.Gong.VIEW_PATH_GONG + "notice_list.jsp";
 
 	}

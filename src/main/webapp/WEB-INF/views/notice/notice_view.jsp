@@ -12,7 +12,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&display=swap" rel="stylesheet">
-
+	
+	<!-- 폰트2 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+	href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap"
+	rel="stylesheet">
+	
     <script src="/bbs/resources/js/httpRequest.js"></script>
     
     <script>
@@ -61,11 +68,12 @@
 <!-- main -->
 <main>
     <form name="f" method="post">
-        <h2>${vo.notice_title}</h2><!-- 글 제목 -->
+        <!-- 글 제목 -->
+        <h2>${vo.notice_title}</h2>
         
         <div class="content-container">
             <div class="content-item">
-                <span class="content-label">작성자</span>
+                <span class="content-label">작성자 : </span>
                 <span class="content-value">${vo.notice_name}</span>
             </div>
             <div class="content-item">
@@ -73,9 +81,10 @@
                 <span class="content-value">${vo.notice_regdate}</span>
             </div>
         </div>
-        <hr>
+        <hr><br>
             <div class="content-box">
-                <span class="content-label">내용</span><br>
+                <span class="content-label">공지 내용</span><br>
+                <br>
                 <pre class="content-val">${vo.notice_content}</pre>
             </div>
             <div class="button-container">

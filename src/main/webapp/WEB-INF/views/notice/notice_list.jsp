@@ -84,8 +84,9 @@
 			</c:forEach>
 			
 		</table>
+			<div class="page_menu">
 			<p>${ pageMenu }</p>
-		
+			</div>
 		</main>
 		
 	<jsp:include page="/WEB-INF/views/include/footer.jsp"/>

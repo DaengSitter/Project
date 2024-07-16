@@ -83,7 +83,10 @@
 	        <button class="after" type="button" onclick="location.href='logout.do'">로그아웃</button>
    	   </div>
 	   </div>
-
+	   
+	
+		
+   
    </div>
    </div>
    </main>

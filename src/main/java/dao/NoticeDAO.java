@@ -17,10 +17,10 @@ public class NoticeDAO {
 	}
 	
 	//전체 게시글 조회
-	public List<NoticeVO> selectList(){
-		List<NoticeVO> list = sqlSession.selectList("notice.notice_list");
-		return list;
-	}
+		public List<NoticeVO> selectList(Map<String, Object> map){
+			List<NoticeVO> list = sqlSession.selectList("notice.notice_list",map);
+			return list;
+		}
 	
 	public int insert(NoticeVO vo) {
 		int res = sqlSession.insert("notice.notice_insert",vo);
@@ -34,6 +34,11 @@ public class NoticeDAO {
 		NoticeVO vo = sqlSession.selectOne("notice.select_one",idx);
 		return vo;
 		
+	}
+	
+	public int getRowTotal(Map<String, Object> map) {
+		int count = sqlSession.selectOne("notice.notice_count",map);
+		return count;
 	}
 	
 	 //조회수 증가

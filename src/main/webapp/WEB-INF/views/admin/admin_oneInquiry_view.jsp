@@ -6,16 +6,89 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		
+		<!-- 폰트 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&display=swap" rel="stylesheet">
+		
+		<!-- 폰트2 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		
 		<style>
-			.table_main  {border-collapse:collapse;
-				  					 width: 700px;
-				  					 height: 500px;}
-				  					 
-			.table_sub {border-collapse:collapse;}
-				  		
-		 	.table_reply{border-collapse:collapse;
-				  		width: 700px;
-				  		height: 200px;}
+			
+			main {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					flex-direction: column;
+					width: 100%;
+			}
+				
+			h2 {
+				font-family: 'Gamja Flower', cursive;
+				font-size: 50px;
+				padding: 20px;
+				text-align: center;
+				margin-bottom: 20px;
+			}
+			
+			.table_quiry, .table_admin{
+				border-radius: 10px;
+				width: 900px;
+		
+			}
+			
+			td, th {
+				padding: 10px;
+				border:1px solid #C4DEFF;
+				text-align: center;
+				font-family: Nanum Gothic;
+				font-weight: bold;
+				border-radius: 5px;
+				
+			}
+			
+		
+			
+			.list_view_btn{
+				padding-top: 20px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin-bottom: 50px;
+				
+			}
+			
+			input[type="button"]{
+				font-family: Nanum Gothic;
+				font-weight: bold;
+				padding: 10px;
+				width: 200px;
+				background-color: #C4DEFF;
+				border:none;
+				border-radius: 5px;
+			}
+			
+			input[type="button"]:hover{
+				background-color: #79ABFF;
+			}
+			
+			hr{
+				border: 1px dashed #C4DEFF;
+			}
+			
+			#comment_disp{
+				text-align: left;
+			}
+			
+			
+			img{
+				width: 300px;
+				height: 300px;
+			}
 		</style>
     	
 		<script src="/project/resources/js/httpRequest.js"></script>
@@ -106,8 +179,10 @@
 	</head>
 	
 	<body>
-		<div>1:1문의 상세보기</div>
-		<table class="table_main" border="1" align="center">
+	
+		<main>
+		<div><h2>1:1문의 상세보기</h2></div>
+		<table class="table_quiry">
 			<tr>
 				<td>문의번호</td>
 				<td>${vo.oneinquiry_idx }</td>
@@ -156,19 +231,19 @@
 			</tr>
 		</table>	
 		
-		<hr width="700">
+		<hr>
 		<div id="comment_disp"></div>
 		
 
 <!-- 답변 영역  -->	
-		<hr width="700">	
+		<hr>	
 		<div>
 		<form>
-			<table class="table_sub" border="1" align="center" width="700">
+			<table class="table_admin">
 				<tr>
 					<td>관리자</td>
-					<input type="hidden" name="onecomment_admin_idx" value="${sessionScope.admin.admin_idx }">
 					<input type="hidden" name="onecomment_oneinquiry_idx" value="${vo.oneinquiry_idx }">
+					<input type="hidden" name="onecomment_admin_idx" value="${sessionScope.admin.admin_idx }">
 					<td><input name="onecomment_admin_name" value="${sessionScope.admin.admin_name }" readonly></td>
 					<td><input type="button" value="등록" onclick="oneCommSubmit(this.form);"></td>
 				</tr>
@@ -180,8 +255,10 @@
 			</table>
 		</form>
 		
+		<div class="list_view_btn">
 		<input type="button" value="목록보기" onclick="location.href='admin_go_board.do?page=${param.page}'">
 		</div>
-
+		</div>
+	</main>
 	</body>
 </html>

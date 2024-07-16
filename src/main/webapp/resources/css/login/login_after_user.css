@@ -158,5 +158,17 @@
        border-radius: 10px;
    }
    
+   
+   a{
+   	text-decoration: none;
+   	color: black;
+   }
+   
+   a:hover{
+   	color: white;
+   }
+   
+   
+   
 
    

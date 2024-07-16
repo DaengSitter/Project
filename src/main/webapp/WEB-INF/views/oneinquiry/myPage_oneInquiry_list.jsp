@@ -6,6 +6,20 @@
 	<head>
 		<meta charset="UTF-8">
 		<title>Insert title here</title>
+		
+		<!-- 폰트 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Dongle&family=Gamja+Flower&display=swap" rel="stylesheet">
+		
+		<!-- 폰트2 -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
+		
+		<!-- CSS 파일 링크 -->
+    	<link rel="stylesheet" href="/project/resources/css/oneinquiry/mypage_oneinquiry_list.css">
+		
 		<style>
 			table{border-collapse: collapse;}
 		</style>
@@ -17,10 +31,23 @@
 	</head>
 	
 	<body>
+	
+		<!-- 헤더  -->
+		<jsp:include page="/WEB-INF/views/include/header.jsp"/>
+		
+		<main>
+		
 		<form>
 		<input type="hidden" name="oneinquiry_user_idx" value="${vo.oneinquiry_idx }">
-		<div>나의 1:1문의</div>
-		<table border="1">
+		
+		
+		<div> 
+		<h2>나의 1:1문의</h2> 
+		</div>
+		
+		
+		<div id="oneinquiry_list">
+		<table>
 			<tr>
  				<th>번호</th>
  				<th>제목</th>
@@ -38,7 +65,11 @@
 				<td>${vo.oneinquiry_status }</td>
 			</c:forEach>
 		</table>
-		<div>${pageMenu }</div>
+		</div>
+		
+		
+		<div class="page_menu">${pageMenu }</div>
  		</form>
+ 		</main>
 	</body>
 </html>
